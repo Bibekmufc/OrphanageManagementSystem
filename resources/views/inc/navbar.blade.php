@@ -1,6 +1,6 @@
 
-              <nav class="navbar navbar-expand-lg bg-dark">
-                <div class="container">
+              <nav class="navbar navbar-expand-md bg-dark">
+                <div class="container-fluid">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
@@ -53,11 +53,10 @@
     
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-    
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
                                         </form>

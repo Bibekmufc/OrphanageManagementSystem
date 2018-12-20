@@ -18,12 +18,18 @@ Route::get('/donate', 'PagesController@donate');
 Route::get('/photos', 'PagesController@photos');
 Route::get('/volunteer', 'PagesController@volunteer');
 
+Route::get('/test', 'PagesController@test');
+
+
+Route::get('/admin/children/edit', 'AdminPageController@children');
+Route::get('/admin/index', 'AdminPageController@dashboard');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-ROute::get('/admin', 'AdminController@index');
+Route::get('/admin', 'AdminController@index');
+
 
 Auth::routes();
 

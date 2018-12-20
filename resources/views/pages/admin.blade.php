@@ -17,7 +17,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     You are logged in as <strong>ADMIN</strong>!
                 </div>
             </div>

@@ -4,34 +4,21 @@
         Donate
 @endsection
 @section('content')
-
 <div class="jumbotron">
         <div class="container">
                 <h1>{{$title}}</h1>
                 <p>You can donate with bitcoin into the following address.</p>
-                 <input type="text" value="Hello World" id="myInput" disabled>
+                <input type="myInp" type="text" value="Hello!">
+                <button id="btnCopy"> Copy Address </button>   
 
-                <div class="tooltip">
-                <button onclick="myFunction()" onmouseout="outFunc()">
-                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-                Copy
-                </button>
-                </div>
-
-                <script>
-                function myFunction() {
-                var copyText = document.getElementById("myInput");
-                copyText.select();
-                document.execCommand("copy");
+                <script type="text/javascript">
+                        const myInp = document.getElementById("myInp");
+                        const btnCopy = document.getElementById("btnCopy");
                 
-                var tooltip = document.getElementById("myTooltip");
-                tooltip.innerHTML = "Copied: " + copyText.value;
-                }
-
-                function outFunc() {
-                var tooltip = document.getElementById("myTooltip");
-                tooltip.innerHTML = "Copy to clipboard";
-                }
+                        btnCopy.onclick = function(){
+                                myInp.select();
+                                document.execCommand("Copy");    
+                        }
                 </script>
         </div>
 </div>
