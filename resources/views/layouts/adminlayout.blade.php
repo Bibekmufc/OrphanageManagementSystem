@@ -30,7 +30,7 @@
                 <div id="sidebar" class="col-md-3">
                         @include('inc.sidebar')
                     </div>
-                    <div id="content" class="col-xs-7 col-sm-6 col-lg-8">
+                    <div id="content">
                             @yield('content')
                     </div>
         </div>

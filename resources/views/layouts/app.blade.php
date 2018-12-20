@@ -17,7 +17,6 @@
     
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Monstserrat" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css" rel="stylesheet" type="text/css">
     
 
     <!-- Styles -->
@@ -27,9 +26,8 @@
 <body>
     <div id="app">
         @include('inc.navbar')
-            <div class = "container">
             @yield('content')
-            </div>
     </div>
 </body>
+@include('inc.footer')
 </html>

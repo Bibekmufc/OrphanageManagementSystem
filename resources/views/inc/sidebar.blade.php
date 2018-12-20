@@ -1,4 +1,3 @@
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
@@ -22,6 +21,7 @@
                 </li>
                 <ul class="sub-menu collapse" id="products">
                     <li class="active"><a href="/admin/children/edit">Edit Children</a></li>
+                    <li><a href="#">Add Children</a></li>
                     <li><a href="#">View Children</a></li>
                 </ul>
 
@@ -65,8 +65,10 @@
   font-size: 12px;
   font-weight: 200;
   background-color: #2e353d;
+  margin-left: -15px;
+
+  padding: 15px;
   position: fixed;
-  top: 109px;
   width: 300px;
   height: 100%;
   color: #e1ffff;
@@ -198,6 +200,7 @@
 @media (min-width: 767px) {
   .nav-side-menu .menu-list .menu-content {
     display: block;
+    padding: 12px;
   }
 }
 body {
