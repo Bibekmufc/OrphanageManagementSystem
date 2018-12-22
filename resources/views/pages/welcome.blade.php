@@ -23,37 +23,32 @@
 @endsection
 
 @section('content')
-		<!-- HOME OWL -->
-		<div id="home-owl" class="owl-carousel owl-theme">
-			<!-- home item -->
-			<div class="home-item">
-				<!-- section background -->
-				<div class="section-bg" style="background-image: url(./img/background-1.jpg);"></div>
-				<!-- /section background -->
 
-				<!-- home content -->
-				<div class="home">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="home-content">
-									<h1>Save The Children</h1>
-									<a href="#causes" class="primary-button">View Causes</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /home content -->
-			</div>
-			<!-- /home item -->
+<div id="home-owl" class="owl-carousel owl-theme">
+  <!-- home item -->
+  <div class="home-item">
+    <!-- section background -->
+    <div class="section-bg" style="background-image: url(./img/background-1.jpg);"></div>
+    <!-- /section background -->
 
-			<!-- home item -->
-			<!-- /home item -->
-		</div>
-		<!-- /HOME OWL -->
-	</header>
-	<!-- /HEADER -->
+    <!-- home content -->
+    <div class="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="home-content">
+              <h1>Save The Children</h1>
+              <a href="#causes" class="primary-button">View Causes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /home content -->
+  </div>
+  <!-- /home item -->
+</div>
+<!-- /HOME OWL -->
 
 <!-- ABOUT -->
 <div id="about" class="section">

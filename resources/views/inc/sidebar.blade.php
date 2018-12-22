@@ -3,6 +3,7 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+<div class="container-fluid">
 <div class="nav-side-menu">
     <div class="brand"></div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -11,29 +12,28 @@
   
             <ul id="menu-content" class="menu-content collapse out">
                 <li>
-                  <a href="#">
+                  <a href="/admin/index">
                   <i class="fa fa-dashboard fa-lg"></i> Dashboard
                   </a>
                 </li>
 
-                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                <li  data-toggle="collapse" data-target="#children" class="collapsed">
                   <a href="#">Children<span class="arrow"></span></a>
                 </li>
-                <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="/admin/children/edit">Edit Children</a></li>
-                    <li><a href="#">Add Children</a></li>
-                    <li><a href="#">View Children</a></li>
+                <ul class="sub-menu collapse" id="children">
+                    <li><a href="/admin/children/create">Add Children</a></li>
+                    <li><a href="/admin/children/view">View and Edit Children</a></li>
                 </ul>
 
 
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"></i> Services <span class="arrow"></span></a>
-                </li>  
-                <ul class="sub-menu collapse" id="service">
-                  <li>New Service 1</li>
-                  <li>New Service 2</li>
-                  <li>New Service 3</li>
-                </ul>
+                <li  data-toggle="collapse" data-target="#staffs" class="collapsed">
+                    <a href="#">Staffs<span class="arrow"></span></a>
+                  </li>
+                  <ul class="sub-menu collapse" id="staffs">
+                      <li><a href="/admin/staffs/edit">Edit Staffs</a></li>
+                      <li><a href="/admin/staffs/create">Add Staffs</a></li>
+                      <li><a href="/admin/staffs/view">View Staffs</a></li>
+                  </ul>
 
 
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
@@ -57,7 +57,7 @@
             </ul>
      </div>
 </div>
-
+</div>
 <style>
 .nav-side-menu {
   overflow: auto;
@@ -65,8 +65,8 @@
   font-size: 12px;
   font-weight: 200;
   background-color: #2e353d;
-  margin-left: -15px;
-
+  margin-left: -30px;
+  margin-top: -20px;
   padding: 15px;
   position: fixed;
   width: 300px;

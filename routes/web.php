@@ -20,10 +20,15 @@ Route::get('/volunteer', 'PagesController@volunteer');
 
 Route::get('/test', 'PagesController@test');
 
+Route::get('/admin/children/view', 'ChildrenController@index');
+Route::post('/admin/children/create', 'ChildrenController@store');
+Route::get('/admin/children/create', 'ChildrenController@create');
+Route::get('/admin/children/{child}/edit', 'ChildrenController@edit');
+Route::patch('admin/children/{child}', 'ChildrenController@update');
+Route::delete('admin/children/{child}', 'ChildrenController@destroy');
 
-Route::get('/admin/children/edit', 'AdminPageController@children');
+
 Route::get('/admin/index', 'AdminPageController@dashboard');
-
 
 Auth::routes();
 
