@@ -28,12 +28,4 @@ class PagesController extends Controller
         $title = 'Photos of Children';
         return view('pages.photos')->with('title', $title);
     }
-    public function volunteer(){
-        $title = 'Volunteer activities';
-        return view('pages.volunteer')->with('title', $title);
-    }
-
-    public function test(){
-        return view('pages.test');
-    }
 }

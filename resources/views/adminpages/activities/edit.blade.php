@@ -75,7 +75,7 @@ Dashboard
 
 
 
-<h2 style="margin-left: 311px;">Edit Information</h2>
+<h2 style="margin-left: 311px;">Edit Activity</h2>
 <p>---------------------------------------------------------------------------------------------------------------------------</p>
 <div class="container-fluid">
     @if (count($errors) > 0)
@@ -92,60 +92,31 @@ Dashboard
         <p>{{\Session::get('success')}}</p>
     </div>
     @endif
-    <form method="POST" action="{{action('ChildrenController@update', $id)}}" style="margin-left: 81px;">
+    <form method="POST" action="{{action('ActivitiesController@update', $id)}}" style="margin-left: 81px;">
         @csrf
         <input type="hidden" name="_method" value="PATCH" />
         <div class="row">
             <div class="col-25">
-                <label for="fname">First Name</label>
+                <label for="activity_name">Activity Name</label>
             </div>
             <div class="col-75">
-                <input type="text" id="fname" name="firstname" placeholder="First Name" value="{{$children->first_name}}">
+                <input type="text" id="activity_name" name="activity_name" placeholder="Activity Name" value="{{$activities->activity_name}}">
             </div>
         </div>
         <div class="row">
             <div class="col-25">
-                <label for="lname">Last Name</label>
+                <label for="activity_location">Location</label>
             </div>
             <div class="col-75">
-                <input type="text" id="lname" name="lastname" placeholder="Last Name" value="{{$children->last_name}}">
+                <input type="text" id="activity_location" name="activity_location" placeholder="Location" value="{{$activities->last_name}}">
             </div>
         </div>
         <div class="row">
             <div class="col-25">
-                <label for="date">Date of Birth</label>
+                <label for="date">Date and Time</label>
             </div>
             <div class="col-75">
-                <input type="date" id="date" name="date" value="{{$children->date_of_birth}}">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="gender">Gender</label>
-            </div>
-            <div class="col-75">
-                <select id="gender" name="gender">
-                    <option value="{{$children->gender}}"></option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="description">Description</label>
-            </div>
-            <div class="col-75">
-                <textarea id="description" name="description" value="{{$children->description}}" placeholder="{{$children->description}}"
-                    style="height:200px"></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="admission">Date of Admission</label>
-            </div>
-            <div class="col-75">
-                <input type="date" id="admission" name="admission" value="{{$children->admission_date}}">
+                <input type="datetime-local" id="date" name="date" value="{{$activities->date}}">
             </div>
         </div>
         <div class="row">

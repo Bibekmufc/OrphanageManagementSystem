@@ -72,7 +72,7 @@ input[type=submit]:hover {
 }
 </style>
 
-<h2 style="margin-left: 311px;">Add new Child</h2>
+<h2 style="margin-left: 311px;">Add new Staff</h2>
 <p>---------------------------------------------------------------------------------------------------------------------------</p>
 <div class="container-fluid">
     @if (count($errors) > 0)
@@ -89,7 +89,7 @@ input[type=submit]:hover {
         <p>{{\Session::get('success')}}</p>
     </div>
     @endif
-    <form method="POST" action="/admin/children/create" style="margin-left: 81px;">
+    <form method="POST" action="/admin/staffs/create" style="margin-left: 81px;">
         @csrf
         <div class="row">
             <div class="col-25">
@@ -128,18 +128,44 @@ input[type=submit]:hover {
         </div>
         <div class="row">
             <div class="col-25">
-                <label for="description">Description</label>
+                <label for="contact_number">Contact Number</label>
             </div>
             <div class="col-75">
-                <textarea id="description" name="description" placeholder="About the child" style="height:200px"></textarea>
+                <input type="text" id="contact_number" name="contact_number" placeholder="Phone no.">
             </div>
         </div>
         <div class="row">
             <div class="col-25">
-                <label for="admission">Date of Admission</label>
+                <label for="address">Address</label>
             </div>
             <div class="col-75">
-                <input type="date" id="admission" name="admission" value="22/12/2018">
+                <input type="text" id="address" name="address" placeholder="Address">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="job_shift">Job Shift</label>
+            </div>
+            <div class="col-75">
+                <select id="job_shift" name="job_shift">
+                    <option value="day">Day</option>
+                    <option value="night">Night</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="job_title">Job Title</label>
+            </div>
+            <div class="col-75">
+                <select id="job_title" name="job_title">
+                    <option value="receptionist">Receptionist</option>
+                    <option value="cleaner">Cleaner</option>
+                    <option value="caretaker">Care-taker</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Cook">Cook</option>
+                    <option value="Dean">Dean</option>
+                </select>
             </div>
         </div>
         <div class="row">

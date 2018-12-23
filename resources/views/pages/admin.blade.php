@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Admin
+Admin
 @endsection
 
 @section('content')
@@ -13,9 +13,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
                     You are logged in as <strong>ADMIN</strong>!
                 </div>

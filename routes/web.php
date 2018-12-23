@@ -16,7 +16,6 @@ Route::get('/about', 'PagesController@about');
 Route::get('/children', 'PagesController@children');
 Route::get('/donate', 'PagesController@donate');
 Route::get('/photos', 'PagesController@photos');
-Route::get('/volunteer', 'PagesController@volunteer');
 
 Route::get('/test', 'PagesController@test');
 
@@ -28,14 +27,36 @@ Route::patch('admin/children/{child}', 'ChildrenController@update');
 Route::delete('admin/children/{child}', 'ChildrenController@destroy');
 
 
+Route::get('/admin/staffs/view', 'StaffsController@index');
+Route::post('/admin/staffs/create', 'StaffsController@store');
+Route::get('/admin/staffs/create', 'StaffsController@create');
+Route::get('/admin/staffs/{staff}/edit', 'StaffsController@edit');
+Route::patch('admin/staffs/{staff}', 'StaffsController@update');
+Route::delete('admin/staffs/{staff}', 'StaffsController@destroy');
+
+Route::get('/admin/activities/view', 'ActivitiesController@index');
+Route::post('/admin/activities/create', 'ActivitiesController@store');
+Route::get('/admin/activities/create', 'ActivitiesController@create');
+Route::get('/admin/activities/{activity}/edit', 'ActivitiesController@edit');
+Route::patch('admin/activities/{activity}', 'ActivitiesController@update');
+Route::delete('admin/activities/{activity}', 'ActivitiesController@destroy');
+
+
+Route::get('/admin/users/view', 'UsersController@index');
+
+Route::get('/volunteer', 'VolunteersController@index');
+Route::post('/volunteer/apply', 'VolunteersController@store');
+Route::get('/volunteer/apply', 'VolunteersController@create');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::get('/users/logout', 'Auth\LoginController@userLogout');
+
+Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('/admin/login', 'Auth\AdminLoginController@Login')->name('admin.login.submit');
 Route::get('/admin/index', 'AdminPageController@dashboard');
+Route::get('/admin/logout', 'Auth\AdminLoginController@logout');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'AdminController@index');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/index', 'LaravelGoogleGraph@index');

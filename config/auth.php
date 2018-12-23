@@ -82,7 +82,7 @@ return [
             'model' => App\Admin::class,
         ],   
     ],
-  
+
 
         // 'users' => [
         //     'driver' => 'database',

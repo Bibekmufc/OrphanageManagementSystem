@@ -92,7 +92,7 @@ Dashboard
         <p>{{\Session::get('success')}}</p>
     </div>
     @endif
-    <form method="POST" action="{{action('ChildrenController@update', $id)}}" style="margin-left: 81px;">
+    <form method="POST" action="{{action('StaffsController@update', $id)}}" style="margin-left: 81px;">
         @csrf
         <input type="hidden" name="_method" value="PATCH" />
         <div class="row">
@@ -100,7 +100,7 @@ Dashboard
                 <label for="fname">First Name</label>
             </div>
             <div class="col-75">
-                <input type="text" id="fname" name="firstname" placeholder="First Name" value="{{$children->first_name}}">
+                <input type="text" id="fname" name="firstname" placeholder="First Name" value="{{$staffs->first_name}}">
             </div>
         </div>
         <div class="row">
@@ -108,7 +108,7 @@ Dashboard
                 <label for="lname">Last Name</label>
             </div>
             <div class="col-75">
-                <input type="text" id="lname" name="lastname" placeholder="Last Name" value="{{$children->last_name}}">
+                <input type="text" id="lname" name="lastname" placeholder="Last Name" value="{{$staffs->last_name}}">
             </div>
         </div>
         <div class="row">
@@ -116,7 +116,7 @@ Dashboard
                 <label for="date">Date of Birth</label>
             </div>
             <div class="col-75">
-                <input type="date" id="date" name="date" value="{{$children->date_of_birth}}">
+                <input type="date" id="date" name="date" value="{{$staffs->dob}}">
             </div>
         </div>
         <div class="row">
@@ -125,7 +125,7 @@ Dashboard
             </div>
             <div class="col-75">
                 <select id="gender" name="gender">
-                    <option value="{{$children->gender}}"></option>
+                    <option value="{{$staffs->gender}}"></option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
@@ -133,19 +133,46 @@ Dashboard
         </div>
         <div class="row">
             <div class="col-25">
-                <label for="description">Description</label>
+                <label for="contact_number">Contact Number</label>
             </div>
             <div class="col-75">
-                <textarea id="description" name="description" value="{{$children->description}}" placeholder="{{$children->description}}"
-                    style="height:200px"></textarea>
+                <input type="text" id="contact_number" name="contact_number" placeholder="Phone no." value="{{$staffs->contact_number}}">
             </div>
         </div>
         <div class="row">
             <div class="col-25">
-                <label for="admission">Date of Admission</label>
+                <label for="address">Address</label>
             </div>
             <div class="col-75">
-                <input type="date" id="admission" name="admission" value="{{$children->admission_date}}">
+                <input type="text" id="address" name="address" placeholder="Address" value="{{$staffs->address}}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="job_shift">Job Shift</label>
+            </div>
+            <div class="col-75">
+                <select id="job_shift" name="job_shift">
+                    <option value="{{$staffs->job_shift}}"></option>
+                    <option value="day">Day</option>
+                    <option value="night">Night</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="job_title">Job Title</label>
+            </div>
+            <div class="col-75">
+                <select id="job_title" name="job_title">
+                    <option value="{{$staffs->job_title}}"></option>
+                    <option value="receptionist">Receptionist</option>
+                    <option value="cleaner">Cleaner</option>
+                    <option value="caretaker">Care-taker</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Cook">Cook</option>
+                    <option value="Dean">Dean</option>
+                </select>
             </div>
         </div>
         <div class="row">

@@ -8,6 +8,11 @@ use App\Child;
 
 class ChildrenController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth:admin');
+    }
+
     public function create(){
         return view('adminpages.children.create');
     }
