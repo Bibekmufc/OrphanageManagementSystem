@@ -2,7 +2,7 @@
 
 
 @section('title')
-Dashboard
+Edit Activities
 @endsection
 
 @section('content')

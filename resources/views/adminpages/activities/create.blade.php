@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Dashboard
+    Add Activities
 @endsection
 
 @section('content')
@@ -72,7 +72,7 @@ input[type=submit]:hover {
 }
 </style>
 
-<h2 style="margin-left: 311px;">Add new Child</h2>
+<h2 style="margin-left: 311px;">Add New Activity</h2>
 <p>---------------------------------------------------------------------------------------------------------------------------</p>
 <div class="container-fluid">
   @if (count($errors) > 0)

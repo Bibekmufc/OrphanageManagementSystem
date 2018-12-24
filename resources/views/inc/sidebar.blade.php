@@ -46,6 +46,10 @@
                 <li>
                     <a href="/admin/users/view"> Users</a>
                 </li>
+                
+                <li>
+                    <a href="/admin/volunteers/view">Volunteers</a>
+                </li>
             </ul>
         </div>
     </div>

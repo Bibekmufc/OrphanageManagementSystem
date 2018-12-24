@@ -48,6 +48,10 @@ Route::get('/volunteer', 'VolunteersController@index');
 Route::post('/volunteer/apply', 'VolunteersController@store');
 Route::get('/volunteer/apply', 'VolunteersController@create');
 
+Route::get('/admin/volunteers/view', 'VolunteersController@show');
+Route::delete('admin/volunteers/{volunteer}', 'VolunteersController@destroy');
+
+
 
 Auth::routes();
 

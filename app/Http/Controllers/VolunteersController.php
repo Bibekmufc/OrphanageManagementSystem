@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Volunteer;
 
 class VolunteersController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('auth', ['except'=>['show', 'destroy']]);
+        $this->middleware('auth:admin', ['only'=>['show', 'destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -76,9 +80,10 @@ class VolunteersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $volunteers = Volunteer::all()->toArray();
+        return view('adminpages.volunteers.view', compact('volunteers'));
     }
 
     /**
@@ -89,7 +94,8 @@ class VolunteersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $volunteers = Volunteer::find($id);
+        return view('adminpages.volunteers.edit', compact('volunteers', 'id'));
     }
 
     /**
@@ -112,6 +118,8 @@ class VolunteersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $volunteers = Volunteer::find($id);
+        $volunteers->delete();
+        return redirect('/admin/volunteers/view')->with('success', 'Deleted successfully');
     }
 }

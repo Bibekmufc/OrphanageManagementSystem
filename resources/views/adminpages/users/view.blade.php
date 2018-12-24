@@ -2,7 +2,7 @@
 
 
 @section('title')
-View Children
+Users
 @endsection
 
 

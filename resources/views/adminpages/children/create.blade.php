@@ -2,7 +2,7 @@
 
 
 @section('title')
-Dashboard
+Add children
 @endsection
 
 @section('content')

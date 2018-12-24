@@ -2,39 +2,49 @@
 
 
 @section('title')
-View Activities
+Volunteers
 @endsection
 
 
 @section('content')
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <br />
-            <h3 align="center"> Activities </h3>
+            <h3 align="center">List of volunteers</h3>
             @if($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{$message}}</p>
             </div>
             @endif
-            <a href="/admin/activities/create" class="btn btn-primary" style="float: right;">Add Activities</a>
-            <br />
             <table class="table table-borederd">
                 <tr>
-                    <th>Activity Name</th>
-                    <th>Location</th>
-                    <th>Date</th>
-                    <th>Edit</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Nationality</th>
+                    <th>Date of Birth</th>
+                    <th>Address</th>
+                    <th>Contact Number</th>
+                    <th>Email</th>
+                    <th>Education</th>
+                    <th>Profession</th>
+                    <th>Selected Program</th>
                     <th>Delete</th>
                 </tr>
-                @foreach ($activities as $row)
+                @foreach ($volunteers as $row)
                 <tr>
-                    <td>{{$row['activity_name']}}</td>
-                    <td>{{$row['activity_location']}}</td>
-                    <td>{{$row['date']}}</td>
-                    <td><a href="{{action('ActivitiesController@edit', $row['id'])}}" class="btn btn-secondary">Edit</a></td>
+                    <td>{{$row['name']}}</td>
+                    <td>{{$row['gender']}}</td>
+                    <td>{{$row['nationality']}}</td>
+                    <td>{{$row['dob']}}</td>
+                    <td>{{$row['address']}}</td>
+                    <td>{{$row['contact_number']}}</td>
+                    <td>{{$row['email']}}</td>
+                    <td>{{$row['education']}}</td>
+                    <td>{{$row['profession']}}</td>
+                    <td>{{$row['selected_program']}}</td>
                     <td>
-                        <form method="POST" class="delete_form" action="{{action('ActivitiesController@destroy', $row['id'])}}">
+                        <form method="POST" class="delete_form" action="{{action('VolunteersController@destroy', $row['id'])}}">
                             @csrf
                             <input type="hidden" name="_method" value="DELETE" />
                             <button type="submit" class="btn btn-danger">DELETE</button>

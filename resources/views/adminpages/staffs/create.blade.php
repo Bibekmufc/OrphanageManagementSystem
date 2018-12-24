@@ -2,7 +2,7 @@
 
 
 @section('title')
-Dashboard
+Add staffs
 @endsection
 
 @section('content')
